@@ -6,7 +6,7 @@ const routes = ["Home", "About", "Services", "Pricing", "Contact"];
 
 const Nav = () => {
   return (
-    <nav className="flex flex-wrap justify-between items-center">
+    <nav className="flex relative flex-wrap justify-between items-center z-10">
       <Logo />
       <Navigation routes={routes} />
       <ShoppingButton />

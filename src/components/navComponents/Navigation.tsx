@@ -16,21 +16,26 @@ const Navigation = ({ routes }: Props) => {
   return (
     <>
       <button
-        className="lg:hidden p-2 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 rounded-lg"
+        className="lg:hidden p-2 hover:bg-gray-100 focus:ring-2
+         focus:ring-gray-200 rounded-lg"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
         <RxHamburgerMenu size={25} />
       </button>
       {/* Menu List */}
       <div className={menuListDiv}>
-        <ul className="flex flex-col lg:flex-row bg-gray-50 lg:bg-transparent border border-gray-100 lg:border-none p-4 text-lg rounded-lg lg:space-x-8">
+        <ul
+          className="flex flex-col lg:flex-row bg-gray-50 lg:bg-transparent 
+        border border-gray-100 lg:border-none p-4 text-lg rounded-lg lg:space-x-8"
+        >
           {routes.map((route, i) => (
             <li
-              className={`cursor-pointer py-2 px-3 ${
-                i === 0
-                  ? "bg-blue-500 lg:bg-transparent text-white lg:text-blue-500"
-                  : "hover:bg-gray-100"
-              } rounded cursor-pointer`}
+              className={`cursor-pointer py-2 px-3 rounded hover:bg-transparent
+                lg:hover:text-blue-500 ${
+                  i === 0
+                    ? "bg-blue-500 lg:bg-transparent text-white lg:text-blue-500"
+                    : "hover:bg-gray-100"
+                }  ${(i == 3 || i == 4) && "lg:text-white"}`}
               key={route}
             >
               {route}
